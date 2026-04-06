@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infografía: Spec-Driven Development Jurídico</title>
+  <title>Infografía: ¿Qué es Spec-Driven Development?</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -106,8 +106,8 @@
       flex-shrink: 0;
     }
 
-    /* ---- THESIS BOX ---- */
-    .thesis-box {
+    /* ---- DEFINITION BOX ---- */
+    .def-box {
       background: linear-gradient(135deg, #1a1a2e, #16213e);
       border: 2px solid var(--accent);
       border-radius: 16px;
@@ -117,8 +117,8 @@
       position: relative;
     }
 
-    .thesis-box::before {
-      content: 'TESIS';
+    .def-box::before {
+      content: 'DEFINICIÓN';
       position: absolute;
       top: -12px;
       left: 50%;
@@ -132,67 +132,103 @@
       letter-spacing: 0.1em;
     }
 
-    .thesis-box p {
+    .def-box p {
       font-size: 1.15em;
       font-weight: 500;
       line-height: 1.7;
     }
 
-    .thesis-box strong {
+    .def-box strong {
       color: var(--accent);
     }
 
-    /* ---- ANALOGY ---- */
-    .analogy {
+    /* ---- ORIGIN TIMELINE ---- */
+    .origin-cards {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .analogy-card {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 24px;
-      border: 1px solid var(--border);
-    }
-
-    .analogy-card h3 {
-      font-size: 1em;
-      font-weight: 700;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
       margin-bottom: 12px;
     }
 
-    .analogy-card ul {
-      list-style: none;
-      font-size: 0.9em;
-    }
-
-    .analogy-card ul li {
-      padding: 4px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .analogy-card ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .analogy-card.dev ul li::before { background: var(--accent); }
-    .analogy-card.law ul li::before { background: var(--mauve); }
-
-    .analogy-equals {
-      font-size: 2em;
-      font-weight: 800;
-      color: var(--yellow);
+    .origin-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      border-top: 4px solid;
       text-align: center;
+    }
+
+    .origin-card .year {
+      font-size: 1.4em;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .origin-card h4 {
+      font-size: 0.9em;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .origin-card p {
+      font-size: 0.8em;
+      color: var(--fg-dim);
+      line-height: 1.5;
+    }
+
+    .origin-card:nth-child(1) { border-color: var(--accent); }
+    .origin-card:nth-child(1) .year { color: var(--accent); }
+    .origin-card:nth-child(2) { border-color: var(--green); }
+    .origin-card:nth-child(2) .year { color: var(--green); }
+    .origin-card:nth-child(3) { border-color: var(--mauve); }
+    .origin-card:nth-child(3) .year { color: var(--mauve); }
+
+    /* ---- PRINCIPLE CARDS ---- */
+    .principle-box {
+      background: linear-gradient(135deg, rgba(137,180,250,0.08), rgba(203,166,247,0.08));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .principle-box h3 {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--accent);
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .principle {
+      text-align: center;
+      padding: 16px;
+      background: var(--card);
+      border-radius: 10px;
+    }
+
+    .principle .p-num {
+      font-size: 2em;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .principle h4 {
+      font-size: 0.9em;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .principle p {
+      font-size: 0.8em;
+      color: var(--fg-dim);
     }
 
     /* ---- PHASES ---- */
@@ -209,7 +245,6 @@
       padding: 16px;
       border: 1px solid var(--border);
       text-align: center;
-      position: relative;
       transition: transform 0.2s;
     }
 
@@ -227,16 +262,8 @@
       margin: 0 auto 10px;
     }
 
-    .phase-card h4 {
-      font-size: 0.85em;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .phase-card p {
-      font-size: 0.75em;
-      color: var(--fg-dim);
-    }
+    .phase-card h4 { font-size: 0.85em; font-weight: 700; margin-bottom: 6px; }
+    .phase-card p { font-size: 0.75em; color: var(--fg-dim); }
 
     .phase-card:nth-child(1) .phase-num { background: var(--fg-dim); color: var(--bg); }
     .phase-card:nth-child(2) .phase-num { background: var(--accent); color: var(--bg); }
@@ -246,12 +273,147 @@
     .phase-card:nth-child(6) .phase-num { background: var(--red); color: var(--bg); }
     .phase-card:nth-child(7) .phase-num { background: var(--mauve); color: var(--bg); }
 
+    /* ---- SOFTWARE SECTION ---- */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .sw-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      border-left: 4px solid;
+    }
+
+    .sw-card h4 { font-size: 0.9em; font-weight: 700; margin-bottom: 6px; }
+    .sw-card p { font-size: 0.82em; color: var(--fg-dim); line-height: 1.5; }
+    .sw-card code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; color: var(--green); }
+
+    .sw-card:nth-child(1) { border-color: var(--accent); }
+    .sw-card:nth-child(2) { border-color: var(--green); }
+    .sw-card:nth-child(3) { border-color: var(--yellow); }
+    .sw-card:nth-child(4) { border-color: var(--mauve); }
+
+    /* ---- DOMAINS ---- */
+    .domains {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .domain-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .domain-card:hover { transform: translateY(-3px); }
+
+    .domain-card .domain-icon {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+    }
+
+    .domain-card h4 { font-size: 0.85em; font-weight: 700; margin-bottom: 6px; }
+
+    .domain-card p { font-size: 0.75em; color: var(--fg-dim); }
+
+    .domain-card .domain-spec {
+      margin-top: 8px;
+      font-size: 0.72em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ---- COMPARISON ---- */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .comp-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px 24px;
+      border-top: 4px solid;
+    }
+
+    .comp-card.bad { border-color: var(--red); }
+    .comp-card.good { border-color: var(--green); }
+    .comp-card.bad h4 { color: var(--red); }
+    .comp-card.good h4 { color: var(--green); }
+
+    .comp-card h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 12px; }
+
+    .comp-card .example {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.82em;
+      line-height: 1.6;
+      border-left: 3px solid var(--border);
+      font-style: italic;
+    }
+
+    .comp-card.bad .example { border-left-color: var(--red); }
+    .comp-card.good .example { border-left-color: var(--green); }
+
+    .comp-card .tag {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 4px;
+      font-size: 0.75em;
+      font-weight: 700;
+      font-style: normal;
+      background: var(--green);
+      color: var(--bg);
+    }
+
+    .comp-card .note {
+      font-size: 0.8em;
+      color: var(--fg-dim);
+      margin-top: 10px;
+    }
+
+    /* ---- QA LEVELS ---- */
+    .qa-levels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .qa-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      border-top: 4px solid;
+      text-align: center;
+    }
+
+    .qa-card:nth-child(1) { border-color: var(--green); }
+    .qa-card:nth-child(2) { border-color: var(--yellow); }
+    .qa-card:nth-child(3) { border-color: var(--red); }
+
+    .qa-card h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 4px; }
+
+    .qa-card .qa-name { font-size: 0.8em; font-weight: 600; margin-bottom: 10px; }
+    .qa-card:nth-child(1) .qa-name { color: var(--green); }
+    .qa-card:nth-child(2) .qa-name { color: var(--yellow); }
+    .qa-card:nth-child(3) .qa-name { color: var(--red); }
+
+    .qa-card p { font-size: 0.82em; color: var(--fg-dim); line-height: 1.5; }
+
     /* ---- FLOW ---- */
     .flow {
       display: flex;
       align-items: stretch;
       gap: 0;
-      margin: 0;
       flex-wrap: nowrap;
       overflow-x: auto;
     }
@@ -261,7 +423,6 @@
       min-width: 160px;
       padding: 20px 16px;
       text-align: center;
-      position: relative;
       border-radius: 12px;
       margin: 0 4px;
     }
@@ -294,129 +455,7 @@
       flex-shrink: 0;
     }
 
-    /* ---- QA LEVELS ---- */
-    .qa-levels {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .qa-card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 20px;
-      border-top: 4px solid;
-      text-align: center;
-    }
-
-    .qa-card:nth-child(1) { border-color: var(--green); }
-    .qa-card:nth-child(2) { border-color: var(--yellow); }
-    .qa-card:nth-child(3) { border-color: var(--red); }
-
-    .qa-card h4 {
-      font-size: 0.95em;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .qa-card .qa-name {
-      font-size: 0.8em;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .qa-card:nth-child(1) .qa-name { color: var(--green); }
-    .qa-card:nth-child(2) .qa-name { color: var(--yellow); }
-    .qa-card:nth-child(3) .qa-name { color: var(--red); }
-
-    .qa-card p {
-      font-size: 0.82em;
-      color: var(--fg-dim);
-      line-height: 1.5;
-    }
-
-    /* ---- COMPARISON ---- */
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .comp-card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 20px 24px;
-      border-top: 4px solid;
-    }
-
-    .comp-card.bad { border-color: var(--red); }
-    .comp-card.good { border-color: var(--green); }
-
-    .comp-card h4 {
-      font-size: 0.95em;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .comp-card.bad h4 { color: var(--red); }
-    .comp-card.good h4 { color: var(--green); }
-
-    .comp-card .example {
-      background: var(--bg);
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 0.82em;
-      line-height: 1.6;
-      border-left: 3px solid var(--border);
-      font-style: italic;
-    }
-
-    .comp-card.bad .example { border-left-color: var(--red); }
-    .comp-card.good .example { border-left-color: var(--green); }
-
-    .comp-card .tag {
-      display: inline-block;
-      padding: 1px 8px;
-      border-radius: 4px;
-      font-size: 0.75em;
-      font-weight: 700;
-      font-style: normal;
-      background: var(--green);
-      color: var(--bg);
-    }
-
-    /* ---- CONTEXT ENGINEERING ---- */
-    .ce-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .ce-card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 18px;
-      border-left: 4px solid;
-    }
-
-    .ce-card:nth-child(1) { border-color: var(--accent); }
-    .ce-card:nth-child(2) { border-color: var(--green); }
-    .ce-card:nth-child(3) { border-color: var(--yellow); }
-    .ce-card:nth-child(4) { border-color: var(--red); }
-
-    .ce-card h4 {
-      font-size: 0.9em;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .ce-card p {
-      font-size: 0.82em;
-      color: var(--fg-dim);
-      line-height: 1.5;
-    }
-
-    /* ---- KEY INSIGHT ---- */
+    /* ---- INSIGHT ---- */
     .insight {
       background: linear-gradient(135deg, rgba(137,180,250,0.1), rgba(203,166,247,0.1));
       border: 1px solid var(--mauve);
@@ -426,11 +465,7 @@
       text-align: center;
     }
 
-    .insight p {
-      font-size: 1.05em;
-      font-weight: 500;
-    }
-
+    .insight p { font-size: 1.05em; font-weight: 500; }
     .insight strong { color: var(--mauve); }
 
     /* ---- SOURCES ---- */
@@ -473,10 +508,7 @@
       background: var(--accent);
     }
 
-    .source-item strong {
-      color: var(--fg);
-      font-weight: 600;
-    }
+    .source-item strong { color: var(--fg); font-weight: 600; }
 
     .source-item .source-cat {
       display: inline-block;
@@ -487,10 +519,11 @@
       margin-bottom: 2px;
     }
 
-    .cat-sdd { background: var(--accent); color: var(--bg); }
-    .cat-legal { background: var(--mauve); color: var(--bg); }
-    .cat-ia { background: var(--green); color: var(--bg); }
-    .cat-norm { background: var(--yellow); color: var(--bg); }
+    .cat-sw { background: var(--accent); color: var(--bg); }
+    .cat-qa { background: var(--green); color: var(--bg); }
+    .cat-agile { background: var(--yellow); color: var(--bg); }
+    .cat-ia { background: var(--mauve); color: var(--bg); }
+    .cat-app { background: var(--teal); color: var(--bg); }
 
     /* ---- FOOTER ---- */
     .footer {
@@ -507,11 +540,12 @@
 
     /* ---- RESPONSIVE ---- */
     @media (max-width: 768px) {
-      .analogy { grid-template-columns: 1fr; }
-      .analogy-equals { transform: rotate(90deg); }
+      .origin-cards { grid-template-columns: 1fr; }
+      .principles { grid-template-columns: 1fr; }
+      .sw-grid { grid-template-columns: 1fr; }
+      .domains { grid-template-columns: repeat(2, 1fr); }
       .comparison { grid-template-columns: 1fr; }
       .qa-levels { grid-template-columns: 1fr; }
-      .ce-grid { grid-template-columns: 1fr; }
       .sources-grid { grid-template-columns: 1fr; }
       .flow { flex-direction: column; }
       .flow-arrow { transform: rotate(90deg); justify-content: center; }
@@ -523,10 +557,9 @@
       body { background: #fff; color: #1a1a1a; }
       .infographic { padding: 20px 0; }
       .header h1 { -webkit-text-fill-color: #1a1a2e; }
-      .thesis-box, .insight { border-color: #333; }
-      .phase-card, .qa-card, .ce-card, .comp-card, .analogy-card, .sources {
-        background: #f5f5f5;
-        border-color: #ccc;
+      .def-box, .insight { border-color: #333; }
+      .phase-card, .qa-card, .sw-card, .comp-card, .origin-card, .domain-card, .sources, .principle {
+        background: #f5f5f5; border-color: #ccc;
       }
     }
   </style>
@@ -536,47 +569,89 @@
 
     <!-- HEADER -->
     <div class="header">
-      <h1>Spec-Driven Development Jurídico</h1>
-      <p class="subtitle">Metodología de ingeniería de software aplicada a la práctica jurídica</p>
-      <p class="author">Por Juan Alejandro Herrera López -- Abogado TI y programador</p>
+      <h1>Spec-Driven Development</h1>
+      <p class="subtitle">Definí qué debe lograr el resultado antes de producirlo. Después verificá que lo logró.</p>
+      <p class="author">Por Juan Alejandro Herrera López</p>
     </div>
 
-    <!-- THESIS -->
-    <div class="thesis-box">
-      <p>Si los abogados producimos documentos con <strong>estructura lógica</strong>,
-        <strong>restricciones formales</strong> y <strong>criterios de validez</strong>
-        -- igual que los programadores -- entonces las <strong>metodologías de verificación
-        de software</strong> deberían ser aplicables a la producción jurídica.
-        El SDD es un caso de prueba concreto de esa idea.</p>
+    <!-- DEFINITION -->
+    <div class="def-box">
+      <p><strong>Spec-Driven Development (SDD)</strong> es una metodología donde se define una
+        <strong>especificación formal del resultado esperado</strong> antes de comenzar a producirlo.
+        El trabajo se ejecuta siguiendo la spec. La revisión verifica contra la spec
+        -- no contra intuición. Aplica a <strong>cualquier profesión</strong> que produce
+        entregables con requisitos verificables.</p>
     </div>
 
-    <!-- ANALOGY -->
+    <!-- ORIGIN IN SOFTWARE -->
     <div class="section">
       <div class="section-title">
-        <span class="icon" style="background:var(--accent);color:var(--bg);">?</span>
-        ¿Por qué los abogados somos programadores de lenguaje natural?
+        <span class="icon" style="background:var(--accent);color:var(--bg);">01</span>
+        Origen: de dónde viene en ingeniería de software
       </div>
-      <div class="analogy">
-        <div class="analogy-card dev">
-          <h3 style="color:var(--accent)">Ingeniería de Software</h3>
-          <ul>
-            <li>Define reglas (funciones, clases)</li>
-            <li>Construye lógica condicional (if/else)</li>
-            <li>Maneja excepciones (try/catch)</li>
-            <li>Produce artefactos verificables (tests)</li>
-            <li>El compilador señala errores <strong style="color:var(--green)">antes</strong></li>
-          </ul>
+      <div class="origin-cards">
+        <div class="origin-card">
+          <div class="year">1986</div>
+          <h4>Design by Contract</h4>
+          <p>Bertrand Meyer propone que cada componente de software define precondiciones, postcondiciones e invariantes como un <em>contrato formal</em>. Si el input cumple la precondición, el output garantiza la postcondición.</p>
         </div>
-        <div class="analogy-equals">=</div>
-        <div class="analogy-card law">
-          <h3 style="color:var(--mauve)">Práctica Jurídica</h3>
-          <ul>
-            <li>Define reglas (normas, cláusulas)</li>
-            <li>Construye lógica condicional (si procede...)</li>
-            <li>Maneja excepciones (defensas subsidiarias)</li>
-            <li>Produce documentos con requisitos formales</li>
-            <li>El juez señala errores <strong style="color:var(--red)">después</strong></li>
-          </ul>
+        <div class="origin-card">
+          <div class="year">2002</div>
+          <h4>Test-Driven Development</h4>
+          <p>Kent Beck formaliza la práctica de escribir los <em>tests antes del código</em>. Los criterios de aceptación CA-XX del SDD son la versión generalizada de esta idea: definir qué es "correcto" antes de producir.</p>
+        </div>
+        <div class="origin-card">
+          <div class="year">Hoy</div>
+          <h4>Spec-Driven Dev</h4>
+          <p>El equipo define la especificación completa del resultado esperado, con criterios verificables, antes de implementar. La revisión deja de ser subjetiva: se verifica criterio por criterio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 PRINCIPLES -->
+    <div class="principle-box">
+      <h3>Los 3 principios fundamentales</h3>
+      <div class="principles">
+        <div class="principle">
+          <div class="p-num">1</div>
+          <h4>Spec primero</h4>
+          <p>Antes de producir, definir qué debe lograr el entregable con criterios concretos y falseables.</p>
+        </div>
+        <div class="principle">
+          <div class="p-num">2</div>
+          <h4>Ejecución trazable</h4>
+          <p>Cada sección del entregable vincula al criterio que satisface. Si no lo vincula, no está justificado.</p>
+        </div>
+        <div class="principle">
+          <div class="p-num">3</div>
+          <h4>Verificación objetiva</h4>
+          <p>La revisión no es "¿se ve bien?" sino "¿cada criterio está satisfecho con evidencia?"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS IN SOFTWARE -->
+    <div class="section">
+      <div class="section-title">
+        <span class="icon" style="background:var(--green);color:var(--bg);">{}</span>
+        Cómo funciona en desarrollo de software
+      </div>
+      <div class="sw-grid">
+        <div class="sw-card">
+          <h4>Spec como contrato</h4>
+          <p>El equipo define un JSON/YAML/documento con el comportamiento esperado: inputs, outputs, restricciones, y <code>acceptance_criteria</code>. Es el contrato entre quien pide y quien implementa.</p>
+        </div>
+        <div class="sw-card">
+          <h4>Tests antes del código</h4>
+          <p>Cada criterio de aceptación se traduce a un test automatizado. El código se escribe para satisfacer los tests -- no al revés. Si el test pasa, el criterio está satisfecho.</p>
+        </div>
+        <div class="sw-card">
+          <h4>Trazabilidad en PRs</h4>
+          <p>Cada pull request referencia los criterios que implementa: <code>[CA-01]</code>, <code>[CA-02]</code>. El reviewer verifica contra la spec, no contra su opinión personal del código.</p>
+        </div>
+        <div class="sw-card">
+          <h4>QA automatizado</h4>
+          <p>El pipeline de CI/CD ejecuta los tests en cada commit. Si un criterio falla, el build se detiene. La verificación es continua, no un evento final.</p>
         </div>
       </div>
     </div>
@@ -584,34 +659,34 @@
     <!-- 6 PHASES -->
     <div class="section">
       <div class="section-title">
-        <span class="icon" style="background:var(--green);color:var(--bg);">6</span>
-        Las 6 fases del framework
+        <span class="icon" style="background:var(--yellow);color:var(--bg);">6</span>
+        Las 6 fases del framework (aplicables a cualquier dominio)
       </div>
       <div class="phases">
         <div class="phase-card">
           <div class="phase-num">0</div>
           <h4>Intake</h4>
-          <p>Capturar hechos, pretensiones, partes, plazos</p>
+          <p>Capturar el problema, los requisitos y las restricciones</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">1</div>
           <h4>Spec de resultado</h4>
-          <p>Definir qué debe lograr el acto procesal</p>
+          <p>Definir formalmente qué debe lograr el entregable</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">2</div>
           <h4>Criterios de aceptación</h4>
-          <p>Definir cómo se verifica si el escrito es correcto</p>
+          <p>Definir cómo se verifica si el resultado es correcto</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">3</div>
           <h4>Investigación dirigida</h4>
-          <p>Solo investigar lo que la spec requiere</p>
+          <p>Solo investigar lo que la spec requiere -- nada más</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">4</div>
-          <h4>Redacción trazable</h4>
-          <p>Cada sección mapea a un criterio [CA-XX]</p>
+          <h4>Ejecución trazable</h4>
+          <p>Cada sección vincula al criterio [CA-XX] que satisface</p>
         </div>
         <div class="phase-card">
           <div class="phase-num">5</div>
@@ -621,40 +696,41 @@
         <div class="phase-card">
           <div class="phase-num">6</div>
           <h4>Cierre como activo</h4>
-          <p>Archivar spec + escrito + resultado como plantilla</p>
+          <p>Archivar spec + resultado como plantilla reutilizable</p>
         </div>
       </div>
     </div>
 
-    <!-- FLOW WITH AI -->
+    <!-- DOMAINS -->
     <div class="section">
       <div class="section-title">
-        <span class="icon" style="background:var(--yellow);color:var(--bg);">4</span>
-        Flujo de ejecución con IA (4 pasos)
+        <span class="icon" style="background:var(--teal);color:var(--bg);">+</span>
+        Dominios donde aplica
       </div>
-      <div class="flow">
-        <div class="flow-step ai">
-          <span class="flow-badge">IA</span>
-          <h4>Paso 1: Análisis</h4>
-          <p>Analiza demanda, genera JSON con opciones estratégicas y criterios</p>
+      <div class="domains">
+        <div class="domain-card">
+          <div class="domain-icon" style="color:var(--accent)">{ }</div>
+          <h4>Software</h4>
+          <p>Specs, tests, PRs trazables, CI/CD con criterios</p>
+          <div class="domain-spec">Spec: user stories + tests</div>
         </div>
-        <div class="flow-arrow">-></div>
-        <div class="flow-step human">
-          <span class="flow-badge">ABOGADO</span>
-          <h4>Paso 2: Decisión</h4>
-          <p>Elige estrategia principal y subsidiaria. La IA NO decide.</p>
+        <div class="domain-card">
+          <div class="domain-icon" style="color:var(--mauve)">&#xA7;</div>
+          <h4>Derecho</h4>
+          <p>Escritos, dictámenes, contratos con criterios CA-XX</p>
+          <div class="domain-spec">Spec: legal-spec JSON</div>
         </div>
-        <div class="flow-arrow">-></div>
-        <div class="flow-step ai">
-          <span class="flow-badge">IA</span>
-          <h4>Paso 3: Redacción</h4>
-          <p>Redacta contestación con etiquetas [CA-XX] siguiendo la spec</p>
+        <div class="domain-card">
+          <div class="domain-icon" style="color:var(--green)">&#x2695;</div>
+          <h4>Medicina</h4>
+          <p>Protocolos clínicos, diagnósticos diferenciales verificables</p>
+          <div class="domain-spec">Spec: protocolo + checklist</div>
         </div>
-        <div class="flow-arrow">-></div>
-        <div class="flow-step human">
-          <span class="flow-badge">ABOGADO</span>
-          <h4>Paso 4: QA</h4>
-          <p>Verifica criterio por criterio. Aprueba o corrige.</p>
+        <div class="domain-card">
+          <div class="domain-icon" style="color:var(--yellow)">&#x2261;</div>
+          <h4>Auditoría</h4>
+          <p>Informes con hallazgos trazables a criterios y evidencia</p>
+          <div class="domain-spec">Spec: plan de auditoría</div>
         </div>
       </div>
     </div>
@@ -669,26 +745,20 @@
         <div class="comp-card bad">
           <h4>Sin SDD</h4>
           <div class="example">
-            "Mi representada cumple con todos los estándares de
-            seguridad aplicables a la banca digital, por lo que
-            no puede atribuírsele responsabilidad alguna."
+            "Se verificaron los controles y se cumple con todos los estándares aplicables,
+            por lo que no se identificaron hallazgos relevantes."
           </div>
-          <p style="font-size:0.8em;color:var(--fg-dim);margin-top:10px">
-            Afirmación genérica. Sin norma concreta. Sin prueba. Sin criterio verificable.
-          </p>
+          <p class="note">Afirmación genérica. Sin criterio concreto. Sin evidencia vinculada. No verificable.</p>
         </div>
         <div class="comp-card good">
           <h4>Con SDD</h4>
           <div class="example">
-            "<span class="tag">[CA-02]</span> Mi representada acredita el cumplimiento
-            del Acuerdo SUGEF 15-16, específicamente los controles de monitoreo
-            transaccional establecidos en los artículos 12 y 15, según consta en
-            el certificado de cumplimiento emitido por la Superintendencia el
-            15 de noviembre de 2025, que se ofrece como prueba documental adjunta."
+            "<span class="tag">[CA-02]</span> Se verificó el cumplimiento del control SOC-15,
+            específicamente los requisitos de monitoreo establecidos en los artículos 12 y 15
+            del estándar, según consta en el certificado emitido el 15 de noviembre de 2025
+            que se adjunta como evidencia documental."
           </div>
-          <p style="font-size:0.8em;color:var(--fg-dim);margin-top:10px">
-            Criterio específico (CA-02). Norma concreta. Prueba vinculada. Verificable.
-          </p>
+          <p class="note">Criterio específico (CA-02). Norma concreta. Evidencia vinculada. Verificable por terceros.</p>
         </div>
       </div>
     </div>
@@ -696,62 +766,74 @@
     <!-- QA LEVELS -->
     <div class="section">
       <div class="section-title">
-        <span class="icon" style="background:var(--teal);color:var(--bg);">QA</span>
-        QA jurídico: 3 niveles de verificación
+        <span class="icon" style="background:var(--red);color:var(--bg);">QA</span>
+        Quality Assurance: 3 niveles de verificación
       </div>
       <div class="qa-levels">
         <div class="qa-card">
           <h4>Nivel 1</h4>
           <div class="qa-name">Self-QA</div>
-          <p>El redactor verifica su escrito contra el checklist de criterios CA-XX.
-            No es releer: es confirmar que cada criterio está satisfecho con evidencia.</p>
+          <p>El autor verifica su entregable contra el checklist de criterios CA-XX.
+            No es releer: es confirmar que cada criterio está satisfecho con evidencia concreta.</p>
         </div>
         <div class="qa-card">
           <h4>Nivel 2</h4>
           <div class="qa-name">Peer-QA</div>
-          <p>Un segundo abogado revisa exclusivamente contra los criterios de aceptación.
-            "¿Cada criterio está satisfecho?" -- no "¿está bien redactado?"</p>
+          <p>Un par revisa exclusivamente contra los criterios de aceptación.
+            "¿Cada criterio está satisfecho?" -- no "¿se ve bien?"</p>
         </div>
         <div class="qa-card">
           <h4>Nivel 3</h4>
           <div class="qa-name">Evidence-QA</div>
-          <p>Verificar que cada argumento tiene prueba ofrecida que lo sostiene.
-            Si la prueba no existe, el criterio no está realmente satisfecho.</p>
+          <p>Verificar que cada afirmación tiene evidencia que la sostiene.
+            Si la evidencia no existe, el criterio no está realmente satisfecho.</p>
         </div>
       </div>
     </div>
 
-    <!-- CONTEXT ENGINEERING -->
+    <!-- FLOW WITH AI -->
     <div class="section">
       <div class="section-title">
-        <span class="icon" style="background:var(--mauve);color:var(--bg);">CE</span>
-        Ingeniería de contexto: los 4 componentes
+        <span class="icon" style="background:var(--mauve);color:var(--bg);">IA</span>
+        SDD + Inteligencia Artificial: flujo con agentes
       </div>
-      <div class="ce-grid">
-        <div class="ce-card">
-          <h4>System Prompt</h4>
-          <p>Rol del modelo, restricciones de comportamiento y formato de respuesta esperado para el dominio jurídico.</p>
+      <p style="color:var(--fg-dim);font-size:0.9em;margin-bottom:14px">
+        La misma spec que hace el proceso verificable con humanos lo hace ejecutable con agentes de IA.
+        La spec es el contrato que todos -- humanos o agentes -- deben cumplir.
+      </p>
+      <div class="flow">
+        <div class="flow-step ai">
+          <span class="flow-badge">AGENTE IA</span>
+          <h4>Análisis</h4>
+          <p>Analiza el input, genera opciones y criterios de aceptación en JSON</p>
         </div>
-        <div class="ce-card">
-          <h4>Spec como contexto</h4>
-          <p>Los criterios de aceptación se inyectan directamente. El LLM no supone el objetivo -- lo recibe explícitamente.</p>
+        <div class="flow-arrow">-></div>
+        <div class="flow-step human">
+          <span class="flow-badge">HUMANO</span>
+          <h4>Decisión</h4>
+          <p>Elige la estrategia. La IA presenta opciones, NO decide.</p>
         </div>
-        <div class="ce-card">
-          <h4>Few-shot jurídico</h4>
-          <p>Pares input/output que muestran cómo razonar: un hecho procesal -> el argumento correcto con la estructura del despacho.</p>
+        <div class="flow-arrow">-></div>
+        <div class="flow-step ai">
+          <span class="flow-badge">AGENTE IA</span>
+          <h4>Ejecución</h4>
+          <p>Produce el entregable con etiquetas [CA-XX] siguiendo la spec</p>
         </div>
-        <div class="ce-card">
-          <h4>Restricciones de output</h4>
-          <p>Qué NO debe hacer: no proponer defensas incompatibles, no citar normas fuera del mapa normativo sin señalarlo.</p>
+        <div class="flow-arrow">-></div>
+        <div class="flow-step human">
+          <span class="flow-badge">HUMANO</span>
+          <h4>QA</h4>
+          <p>Verifica criterio por criterio. Aprueba o devuelve.</p>
         </div>
       </div>
     </div>
 
     <!-- KEY INSIGHT -->
     <div class="insight">
-      <p><strong>CA-03 quedó en amarillo.</strong> Sin el framework, ese punto débil queda enterrado
-        en un escrito de quince páginas y el abogado lo descubre cuando el juez lo señala en sentencia.
-        <strong>Con el framework, aparece antes de firmar.</strong></p>
+      <p>Sin el framework, los puntos débiles quedan enterrados en el entregable y se descubren
+        cuando ya es tarde. <strong>Con el framework, aparecen antes de entregar.</strong>
+        Un LLM puede producir texto fluido con datos inventados.
+        <strong>El QA estructurado es la capa que lo detecta.</strong></p>
     </div>
 
     <!-- SOURCES -->
@@ -759,43 +841,33 @@
       <h3>Fuentes y referencias</h3>
       <div class="sources-grid">
         <div class="source-item">
-          <span class="source-cat cat-sdd">SDD</span><br>
-          <strong>Spec-Driven Development</strong> -- Metodología de desarrollo de software donde la especificación formal precede a la implementación.
+          <span class="source-cat cat-sw">SOFTWARE</span><br>
+          <strong>Spec-Driven Development</strong> -- Metodología donde la especificación formal precede a la implementación.
           <a href="https://en.wikipedia.org/wiki/Specification-driven_development" target="_blank" style="color:var(--accent)">Wikipedia: Specification-driven development</a>
         </div>
         <div class="source-item">
-          <span class="source-cat cat-sdd">SDD</span><br>
-          <strong>Design by Contract (DbC)</strong> -- Bertrand Meyer (1986). Precondiciones, postcondiciones e invariantes como contratos formales entre componentes.
-          <em>Object-Oriented Software Construction</em>, Prentice Hall.
+          <span class="source-cat cat-sw">SOFTWARE</span><br>
+          <strong>Design by Contract</strong> -- Meyer, B. (1988). <em>Object-Oriented Software Construction.</em> Prentice Hall. Precondiciones, postcondiciones e invariantes como contratos formales.
         </div>
         <div class="source-item">
-          <span class="source-cat cat-sdd">SDD</span><br>
-          <strong>Test-Driven Development (TDD)</strong> -- Kent Beck (2002). Escribir los tests antes del código. La inspiración directa para los criterios de aceptación CA-XX.
-          <em>Test Driven Development: By Example</em>, Addison-Wesley.
+          <span class="source-cat cat-sw">SOFTWARE</span><br>
+          <strong>Test-Driven Development</strong> -- Beck, K. (2002). <em>Test Driven Development: By Example.</em> Addison-Wesley. Escribir los tests antes del código.
         </div>
         <div class="source-item">
-          <span class="source-cat cat-sdd">SDD</span><br>
-          <strong>Acceptance Criteria</strong> -- Práctica estándar en metodologías ágiles (Scrum, XP). Criterios verificables que definen cuándo una historia de usuario está "terminada".
+          <span class="source-cat cat-agile">ÁGIL</span><br>
+          <strong>Acceptance Criteria</strong> -- Práctica estándar en Scrum y XP. Criterios verificables que definen cuándo una historia de usuario está "terminada".
         </div>
         <div class="source-item">
-          <span class="source-cat cat-legal">LEGAL</span><br>
-          <strong>Teoría del caso</strong> -- Baytelman, A. y Duce, M. (2004). <em>Litigación penal, juicio oral y prueba.</em> Formalización de la hipótesis antes de construir argumentos.
+          <span class="source-cat cat-agile">ÁGIL</span><br>
+          <strong>Definition of Done (DoD)</strong> -- Checklist compartido que un equipo usa para verificar que un incremento cumple con estándares de calidad antes de considerarlo completo.
         </div>
         <div class="source-item">
-          <span class="source-cat cat-legal">LEGAL</span><br>
-          <strong>Código Civil de Costa Rica</strong> -- Art. 1045 (responsabilidad por culpa) y Art. 1048 (responsabilidad objetiva por actividad peligrosa).
+          <span class="source-cat cat-qa">QA</span><br>
+          <strong>Quality Assurance</strong> -- Proceso sistemático de verificación contra especificaciones. Distinto de "revisión": es verificación estructurada, no lectura subjetiva.
         </div>
         <div class="source-item">
-          <span class="source-cat cat-legal">LEGAL</span><br>
-          <strong>Ley 7472</strong> -- Ley de Promoción de la Competencia y Defensa Efectiva del Consumidor. Art. 35: responsabilidad del proveedor de servicios.
-        </div>
-        <div class="source-item">
-          <span class="source-cat cat-norm">NORMATIVA</span><br>
-          <strong>Acuerdo SUGEF 15-16</strong> -- Reglamento sobre Gestión del Riesgo Operativo y Tecnológico. Controles de monitoreo transaccional y autenticación reforzada.
-        </div>
-        <div class="source-item">
-          <span class="source-cat cat-norm">NORMATIVA</span><br>
-          <strong>Reglamento del Sistema de Pagos del BCCR</strong> -- Obligaciones de seguridad en transferencias electrónicas.
+          <span class="source-cat cat-qa">QA</span><br>
+          <strong>Continuous Integration</strong> -- Fowler, M. (2006). Verificación automatizada en cada commit contra criterios predefinidos. La versión automatizada del QA estructurado.
         </div>
         <div class="source-item">
           <span class="source-cat cat-ia">IA</span><br>
@@ -803,20 +875,27 @@
         </div>
         <div class="source-item">
           <span class="source-cat cat-ia">IA</span><br>
-          <strong>AI Agents</strong> -- Modelos de lenguaje que ejecutan acciones encadenadas de forma autónoma. El JSON de spec funciona como contrato entre agentes especializados.
+          <strong>AI Agents</strong> -- Modelos de lenguaje que ejecutan acciones encadenadas de forma autónoma. La spec funciona como contrato entre agentes especializados.
         </div>
         <div class="source-item">
           <span class="source-cat cat-ia">IA</span><br>
-          <strong>Google Gemini API</strong> -- Modelo utilizado en la implementación. Gemini 2.5 Flash (free tier) para análisis y redacción.
-          <a href="https://aistudio.google.com" target="_blank" style="color:var(--accent)">Google AI Studio</a>
+          <strong>Human-in-the-Loop</strong> -- Patrón de diseño donde las decisiones críticas requieren aprobación humana explícita. En SDD: la estrategia y la aprobación final son siempre humanas.
+        </div>
+        <div class="source-item">
+          <span class="source-cat cat-app">APLICACIÓN</span><br>
+          <strong>Teoría del caso</strong> -- Baytelman, A. y Duce, M. (2004). <em>Litigación penal, juicio oral y prueba.</em> Precedente de definir la hipótesis antes de argumentar, aplicado al derecho.
+        </div>
+        <div class="source-item">
+          <span class="source-cat cat-app">APLICACIÓN</span><br>
+          <strong>SDD Legal</strong> -- Herrera López, J.A. (2026). Implementación del framework SDD para análisis y redacción de escritos jurídicos con IA.
+          <a href="https://github.com/alejoherrera/SDD_LEGAL_app" target="_blank" style="color:var(--accent)">GitHub: SDD_LEGAL_app</a>
         </div>
       </div>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-      <p><strong>SDD Legal</strong> -- Herramienta de código abierto (MIT)</p>
-      <p><a href="https://github.com/alejoherrera/SDD_LEGAL_app">github.com/alejoherrera/SDD_LEGAL_app</a></p>
+      <p><strong>Spec-Driven Development</strong> -- Definí el resultado antes de producirlo. Verificá que lo logró.</p>
       <p style="margin-top:8px">Juan Alejandro Herrera López -- 2026</p>
     </div>
 
