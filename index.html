@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDD Legal - Spec-Driven Development Juridico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <h1>SDD Legal</h1>
+    <p class="subtitle">Metodologia de ingenieria de software aplicada a la practica juridica</p>
+
+    <div class="panel panel-yellow">
+      <p>Este programa aplica Spec-Driven Development al trabajo juridico.<br>
+      El flujo tiene 4 pasos. Los pasos 1 y 3 los ejecuta la IA.<br>
+      El paso 2 lo ejecuta <strong>USTED</strong>: elige la estrategia.<br>
+      El paso 4 es el reporte de verificacion.</p>
+    </div>
+
+    <!-- API Key & Model -->
+    <div class="panel">
+      <label for="api-key-input">API Key de Google AI Studio</label>
+      <div class="api-key-section">
+        <input type="password" id="api-key-input" placeholder="Pegue su API Key aqui">
+        <button id="btn-save-key" class="btn-primary btn-small">Guardar</button>
+        <button id="btn-test-key" class="btn-secondary btn-small">Probar conexion</button>
+        <span id="key-status" style="color:var(--green);font-size:0.85em"></span>
+      </div>
+      <p style="margin-top:6px;color:var(--fg-dim);font-size:0.85em">
+        Es gratis. Obtenga la suya en
+        <a href="https://aistudio.google.com/apikey" target="_blank" style="color:var(--accent)">aistudio.google.com/apikey</a>
+      </p>
+      <div style="margin-top:12px">
+        <label for="model-select">Modelo</label>
+        <select id="model-select">
+          <option value="gemini-2.5-flash" selected>gemini-2.5-flash (rapido, gratis)</option>
+          <option value="gemini-2.5-pro">gemini-2.5-pro (mas potente, gratis con limites)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Privacy warning -->
+    <div class="warning">
+      <strong>[ADVERTENCIA DE PRIVACIDAD]</strong><br>
+      Los datos que usted ingrese son enviados a los servidores de Google (Gemini API).<br>
+      Si va a usar una demanda REAL: anonimice TODOS los datos antes de enviarlos.<br>
+      Reemplace nombres por "Parte A / Parte B" y elimine cedulas, cuentas y datos de contacto.
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STEP 1: Analysis -->
+    <!-- ================================================================= -->
+    <div class="step-header" id="step1-header">
+      <span class="step-number">1</span>
+      PASO 1: Analisis de demanda y generacion de spec
+    </div>
+
+    <div class="panel">
+      <label>Demanda</label>
+      <div class="file-row">
+        <input type="file" id="demand-file" accept=".txt,.html,.htm,.pdf,.docx">
+        <button id="btn-use-example" class="btn-secondary btn-small">Usar ejemplo</button>
+      </div>
+      <textarea id="demand-text" rows="12" placeholder="Pegue el texto de la demanda aqui..."></textarea>
+      <div class="btn-row">
+        <button id="btn-analyze" class="btn-primary">Analizar demanda</button>
+      </div>
+    </div>
+
+    <div id="step1-status" class="panel hidden"></div>
+    <div id="step1-result" class="hidden"></div>
+
+    <!-- ================================================================= -->
+    <!-- STEP 2: Human decision -->
+    <!-- ================================================================= -->
+    <div class="step-header hidden" id="step2-header">
+      <span class="step-number">2</span>
+      PASO 2: Revision y decision estrategica (USTED)
+    </div>
+
+    <div id="step2-section" class="hidden">
+      <div class="panel panel-yellow">
+        <p>Revise las opciones estrategicas generadas.<br>
+        El modelo <strong>NO</strong> eligio por usted. Esa decision es suya.</p>
+        <div style="margin-top:12px">
+          <label for="strategy-select">Seleccione la estrategia principal</label>
+          <select id="strategy-select">
+            <option value="">-- Seleccione una opcion --</option>
+          </select>
+        </div>
+        <div style="margin-top:12px">
+          <label for="strategy-notes">Notas adicionales (opcional: justificacion, combinaciones, subsidiaria)</label>
+          <textarea id="strategy-notes" rows="3" placeholder="Ej: Usar opcion 1 como principal y opcion 2 como subsidiaria porque..."></textarea>
+        </div>
+        <div class="btn-row">
+          <button id="btn-confirm-strategy" class="btn-success">Confirmar estrategia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STEP 3: Drafting -->
+    <!-- ================================================================= -->
+    <div class="step-header hidden" id="step3-header">
+      <span class="step-number">3</span>
+      PASO 3: Redaccion de contestacion
+    </div>
+
+    <div id="step3-section" class="hidden">
+      <div id="step3-status" class="panel hidden"></div>
+      <div id="step3-result" class="hidden"></div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- STEP 4: QA Report -->
+    <!-- ================================================================= -->
+    <div class="step-header hidden" id="step4-header">
+      <span class="step-number">4</span>
+      PASO 4: Reporte de QA
+    </div>
+
+    <div id="step4-section" class="hidden">
+      <div id="step4-result" class="hidden"></div>
+      <div class="btn-row">
+        <button id="btn-download" class="btn-success">Descargar reporte completo (.txt)</button>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;color:var(--fg-dim);font-size:0.85em">
+      SDD Legal v0.1.0 | Autor: Juan Alejandro Herrera Lopez
+    </div>
+  </div>
+
+  <!-- PDF.js for reading PDF files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- Mammoth.js for reading DOCX files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+
+  <script src="kit.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
