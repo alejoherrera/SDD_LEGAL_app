@@ -28,7 +28,7 @@ Demanda (texto, PDF, DOCX o HTML)
 [PASO 4: Reporte QA] --> Criterios satisfechos / pendientes
   |
   v
-[Descargar reporte .txt]
+[Descargar reporte .docx]
 ```
 
 La IA **no elige la estrategia**. Le presenta opciones con ventajas y riesgos. Usted decide. Después la IA redacta siguiendo su decisión, y al final genera un reporte de QA que le permite verificar criterio por criterio.
@@ -50,6 +50,7 @@ La IA **no elige la estrategia**. Le presenta opciones con ventajas y riesgos. U
 | `app.js` | Lógica: llamadas a Gemini, parsing, reporte |
 | `style.css` | Estilos (dark theme) |
 | `kit.js` | Demanda ejemplo + schema JSON embebidos |
+| `demanda_ejemplo.txt` | Demanda ficticia de ejemplo (texto completo) |
 
 ## Formatos de demanda soportados
 
@@ -261,4 +262,4 @@ En un contexto donde la IA empieza a participar en la producción jurídica -- y
 
 ## Licencia
 
-MIT
+Apache License 2.0 -- ver archivo [LICENSE](LICENSE).
