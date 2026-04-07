@@ -150,13 +150,13 @@ async function callGemini(prompt, apiKey, model) {
   const data = await resp.json();
   const candidates = data.candidates;
   if (!candidates || !candidates.length) {
-    throw new Error("El modelo no devolvio respuesta.");
+    throw new Error("El modelo no devolvi\u00f3 respuesta.");
   }
   const parts = candidates[0].content && candidates[0].content.parts;
   if (!parts || !parts.length) {
     const reason = candidates[0].finishReason || "unknown";
     throw new Error(
-      `El modelo no genero respuesta (finishReason=${reason}). ` +
+      `El modelo no gener\u00f3 respuesta (finishReason=${reason}). ` +
       `Esto puede ocurrir por filtros de seguridad de Google.`
     );
   }
@@ -333,7 +333,7 @@ async function readFileAsText(file) {
   // PDF (requires pdf.js loaded via CDN)
   if (name.endsWith(".pdf")) {
     if (typeof pdfjsLib === "undefined") {
-      throw new Error("PDF.js no se cargo. Verifique su conexion a internet.");
+      throw new Error("PDF.js no se carg\u00f3. Verifique su conexi\u00f3n a internet.");
     }
     const arrayBuffer = await file.arrayBuffer();
     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
@@ -349,7 +349,7 @@ async function readFileAsText(file) {
   // DOCX (requires mammoth.js loaded via CDN)
   if (name.endsWith(".docx")) {
     if (typeof mammoth === "undefined") {
-      throw new Error("Mammoth.js no se cargo. Verifique su conexion a internet.");
+      throw new Error("Mammoth.js no se carg\u00f3. Verifique su conexi\u00f3n a internet.");
     }
     const arrayBuffer = await file.arrayBuffer();
     const result = await mammoth.extractRawText({ arrayBuffer });
@@ -474,7 +474,7 @@ async function testConnection() {
     });
 
     if (resp.ok) {
-      statusEl.textContent = "Conexion exitosa";
+      statusEl.textContent = "Conexi\u00f3n exitosa";
       statusEl.style.color = "var(--green)";
       // Auto-save on success
       state.apiKey = key;
@@ -486,7 +486,7 @@ async function testConnection() {
       statusEl.style.color = "var(--red)";
     }
   } catch (err) {
-    statusEl.textContent = "Sin conexion: " + err.message;
+    statusEl.textContent = "Sin conexi\u00f3n: " + err.message;
     statusEl.style.color = "var(--red)";
   }
 
@@ -564,7 +564,7 @@ function renderStep1Results(spec, ok) {
   const resultado = spec.resultado_esperado || {};
   const opciones = resultado.opciones || [];
   if (opciones.length) {
-    let html = `<div class="panel panel-blue"><div class="panel-title">Opciones estrategicas</div><table>
+    let html = `<div class="panel panel-blue"><div class="panel-title">Opciones estrat\u00e9gicas</div><table>
       <tr><th>#</th><th>Descripcion</th><th>Ventaja</th><th>Riesgo</th></tr>`;
     opciones.forEach((o, i) => {
       html += `<tr><td>${i+1}</td><td>${esc(o.descripcion || "")}</td><td>${esc(o.ventaja || "")}</td><td style="color:var(--red)">${esc(o.riesgo || "")}</td></tr>`;
@@ -576,7 +576,7 @@ function renderStep1Results(spec, ok) {
   // Restrictions
   const restricciones = resultado.restricciones_criticas || [];
   if (restricciones.length) {
-    let html = `<div class="panel panel-red"><div class="panel-title">Restricciones criticas</div><ul class="restrictions-list">`;
+    let html = `<div class="panel panel-red"><div class="panel-title">Restricciones cr\u00edticas</div><ul class="restrictions-list">`;
     restricciones.forEach(r => { html += `<li>${esc(r)}</li>`; });
     html += "</ul></div>";
     container.innerHTML += html;
@@ -586,7 +586,7 @@ function renderStep1Results(spec, ok) {
   const criterios = spec.criterios_aceptacion || [];
   if (criterios.length) {
     const levelClass = { "Critico": "tag-critical", "Importante": "tag-important", "Defensa": "tag-defense", "Contexto": "tag-context" };
-    let html = `<div class="panel panel-green"><div class="panel-title">Criterios de aceptacion</div><table>
+    let html = `<div class="panel panel-green"><div class="panel-title">Criterios de aceptaci\u00f3n</div><table>
       <tr><th>Codigo</th><th>Descripcion</th><th>Nivel</th></tr>`;
     criterios.forEach(c => {
       const cls = levelClass[c.nivel] || "";
@@ -602,7 +602,7 @@ function renderStep1Results(spec, ok) {
 // ---------------------------------------------------------------------------
 function populateStrategyDropdown(spec) {
   const select = $("#strategy-select");
-  select.innerHTML = '<option value="">-- Seleccione una opcion --</option>';
+  select.innerHTML = '<option value="">-- Seleccione una opci\u00f3n --</option>';
 
   if (typeof spec !== "object") return;
 
@@ -613,7 +613,7 @@ function populateStrategyDropdown(spec) {
   opciones.forEach((o, i) => {
     const opt = document.createElement("option");
     opt.value = String(i);
-    opt.textContent = `Opcion ${i + 1}: ${o.descripcion || ""}`;
+    opt.textContent = `Opci\u00f3n ${i + 1}: ${o.descripcion || ""}`;
     select.appendChild(opt);
   });
 }
@@ -624,7 +624,7 @@ function populateStrategyDropdown(spec) {
 function runStep2() {
   const selectVal = $("#strategy-select").value;
   if (selectVal === "") {
-    alert("Seleccione una opcion estrategica antes de continuar.");
+    alert("Seleccione una opci\u00f3n estrat\u00e9gica antes de continuar.");
     return;
   }
 
@@ -633,7 +633,7 @@ function runStep2() {
   const notes = $("#strategy-notes").value.trim();
 
   // Build strategy text
-  let text = `Opcion ${idx + 1}: ${opcion.descripcion || ""}`;
+  let text = `Opci\u00f3n ${idx + 1}: ${opcion.descripcion || ""}`;
   if (notes) {
     text += `\nNotas del abogado: ${notes}`;
   }
@@ -663,7 +663,7 @@ function runStep2() {
 // ---------------------------------------------------------------------------
 async function runStep3() {
   const status = $("#step3-status");
-  status.innerHTML = '<span class="spinner"></span> Redactando contestacion siguiendo la spec...';
+  status.innerHTML = '<span class="spinner"></span> Redactando contestaci\u00f3n siguiendo la spec...';
   show(status);
   hide($("#step3-result"));
 
@@ -1002,7 +1002,25 @@ async function downloadReport() {
   children.push(heading("PASO 3: Escrito de contestación", HeadingLevel.HEADING_1));
   children.push(para("Generado por IA siguiendo la spec y la decisión estratégica.", { italic: true, color: GRAY }));
 
-  // Split draft into paragraphs
+  // Split draft into paragraphs, parsing **bold** markdown
+  function parseTextRuns(text, defaultColor, allBold) {
+    const runs = [];
+    const regex = /\*\*(.+?)\*\*/g;
+    let lastIndex = 0;
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        runs.push(new TextRun({ text: text.slice(lastIndex, match.index), size: 20, color: defaultColor, bold: allBold || false }));
+      }
+      runs.push(new TextRun({ text: match[1], size: 20, color: defaultColor, bold: true }));
+      lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+      runs.push(new TextRun({ text: text.slice(lastIndex), size: 20, color: defaultColor, bold: allBold || false }));
+    }
+    return runs.length ? runs : [new TextRun({ text, size: 20, color: defaultColor, bold: allBold || false })];
+  }
+
   const draftLines = state.draftText.split("\n");
   draftLines.forEach(line => {
     const trimmed = line.trim();
@@ -1012,15 +1030,8 @@ async function downloadReport() {
     }
     // Highlight [CA-XX] tags
     const caMatch = trimmed.match(/^\[CA-\d+/);
-    children.push(new Paragraph({
-      spacing: { after: 60 },
-      children: [new TextRun({
-        text: trimmed,
-        size: 20,
-        color: caMatch ? BLUE : "333333",
-        bold: !!caMatch,
-      })],
-    }));
+    const color = caMatch ? BLUE : "333333";
+    children.push(new Paragraph({ spacing: { after: 60 }, children: parseTextRuns(trimmed, color, !!caMatch) }));
   });
   children.push(para(""));
 

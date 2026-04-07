@@ -1,0 +1,135 @@
+REPÚBLICA DE COSTA RICA
+PODER JUDICIAL
+JUZGADO CIVIL DE MAYOR CUANTÍA — SAN JOSÉ
+EXPEDIENTE N.° 2026-00312-0419-CI
+
+════════════════════════════════════════════════════
+DEMANDA ORDINARIA DE MAYOR CUANTÍA
+════════════════════════════════════════════════════
+
+DEMANDANTE:
+  María Fernanda Ulate Brenes
+  Cédula: 1-0892-0341
+  Vecina de San José, Barrio Escalante
+
+DEMANDADO:
+  Banco Nacional Ficticio S.A.
+  Cédula jurídica: 3-010-XXXXXX
+  Representado por su apoderado generalísimo
+
+────────────────────────────────────────────────────
+PRETENSIÓN PRINCIPAL
+────────────────────────────────────────────────────
+
+Que se condene al demandado al pago de ¢14.200.000 (catorce millones
+doscientos mil colones exactos) por concepto de daños y perjuicios
+derivados de estafa digital sufrida el día 8 de enero de 2026, más
+intereses legales desde la fecha del evento hasta su efectivo pago,
+y las costas del proceso.
+
+────────────────────────────────────────────────────
+HECHOS
+────────────────────────────────────────────────────
+
+1. La señora Ulate Brenes mantiene una relación comercial con el Banco
+   Nacional Ficticio S.A. desde hace doce años, siendo titular de la
+   cuenta corriente n.° XXXX-XXXX-XXXX.
+
+2. El 8 de enero de 2026, a las 14:23 horas, la actora recibió una
+   llamada telefónica al número registrado en el banco. El llamante
+   se identificó como funcionario del Departamento de Seguridad de la
+   entidad, con nombre "Carlos Vargas", e indicó que la cuenta había
+   sido comprometida por un acceso no autorizado.
+
+3. El llamante instruyó a la actora a confirmar su token de seguridad
+   de seis dígitos y su clave de acceso al sistema de banca en línea,
+   argumentando que era necesario para "congelar" la cuenta y evitar
+   mayores daños.
+
+4. La actora, confiando en la identidad del llamante y en la urgencia
+   descrita, proporcionó las credenciales solicitadas.
+
+5. Entre las 14:31 y las 14:38 horas del mismo día, se realizaron tres
+   transferencias electrónicas no autorizadas desde la cuenta de la
+   actora hacia cuentas de terceros desconocidos, por los siguientes
+   montos:
+     — Transferencia 1: ¢5.800.000
+     — Transferencia 2: ¢4.900.000
+     — Transferencia 3: ¢3.500.000
+     TOTAL: ¢14.200.000
+
+6. El banco no activó ninguna alerta por transacciones inusuales,
+   a pesar de que: (a) las tres transferencias superaban el promedio
+   mensual de movimientos de la cuenta; (b) los destinatarios eran
+   cuentas nunca antes utilizadas por la actora; y (c) las tres
+   operaciones se realizaron en un intervalo de siete minutos.
+
+7. La actora reportó el fraude al banco a las 14:53 horas del mismo
+   día, es decir, dentro de los 15 minutos siguientes a la última
+   transferencia. El banco informó que las transacciones no podían
+   revertirse.
+
+8. La actora presentó denuncia ante el Organismo de Investigación
+   Judicial (OIJ) el 9 de enero de 2026. La investigación se encuentra
+   en curso.
+
+────────────────────────────────────────────────────
+FUNDAMENTO JURÍDICO
+────────────────────────────────────────────────────
+
+— Artículo 1048 del Código Civil: responsabilidad objetiva por
+  actividad peligrosa. La banca digital constituye una actividad
+  generadora de riesgo que impone al operador el deber de responder
+  por los daños causados, con independencia de culpa.
+
+— Artículo 1045 del Código Civil: responsabilidad por culpa. En
+  forma subsidiaria, el banco incurrió en negligencia al no implementar
+  sistemas de monitoreo transaccional suficientes.
+
+— Artículo 35 de la Ley 7472 (Ley de Promoción de la Competencia y
+  Defensa Efectiva del Consumidor): responsabilidad del proveedor de
+  servicios por daños causados al consumidor.
+
+— Acuerdo SUGEF 15-16 (Reglamento sobre Gestión del Riesgo Operativo
+  y Tecnológico): el banco tenía la obligación de implementar controles
+  de monitoreo de transacciones inusuales y autenticación reforzada.
+
+— Reglamento del Sistema de Pagos del BCCR: obligaciones de seguridad
+  en transferencias electrónicas.
+
+────────────────────────────────────────────────────
+PRUEBA OFRECIDA
+────────────────────────────────────────────────────
+
+Documental:
+  — Estado de cuenta del período enero 2026.
+  — Registro de llamadas del teléfono de la actora (8 de enero 2026).
+  — Capturas de pantalla de las notificaciones de las transferencias.
+  — Copia de la denuncia ante el OIJ.
+  — Correo electrónico de respuesta del banco rechazando la reversión.
+
+Pericial:
+  — Análisis forense de los registros de acceso y autenticación
+    del sistema bancario el día del evento.
+  — Peritaje sobre el perfil transaccional histórico de la cuenta.
+
+Testimonial:
+  — Declaración de la actora.
+
+────────────────────────────────────────────────────
+
+San José, 15 de marzo de 2026.
+
+Lic. Roberto Fallas Méndez
+Abogado — Colegio de Abogados y Abogadas de Costa Rica N.° XXXXX
+Tel: XXXX-XXXX | rfallas@ejemplo.cr
+
+════════════════════════════════════════════════════
+NOTA: Este documento es completamente ficticio.
+Todos los datos son inventados con fines ilustrativos.
+No representa a ninguna persona o entidad real.
+Si va a usar esta herramienta con una demanda real,
+anonimizá los datos antes de pegar el texto en un LLM externo.
+Reemplazá nombres por "Parte A / Parte B" y el expediente
+por un código genérico.
+════════════════════════════════════════════════════

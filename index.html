@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDD Legal - Spec-Driven Development Juridico</title>
+  <title>SDD Legal - Spec-Driven Development Jur&iacute;dico</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <!-- Header -->
     <h1>SDD Legal</h1>
-    <p class="subtitle">Metodologia de ingenieria de software aplicada a la practica juridica</p>
+    <p class="subtitle">Metodolog&iacute;a de ingenier&iacute;a de software aplicada a la pr&aacute;ctica jur&iacute;dica</p>
 
     <div class="panel panel-yellow">
-      <p>Este programa aplica Spec-Driven Development al trabajo juridico.<br>
+      <p>Este programa aplica Spec-Driven Development al trabajo jur&iacute;dico.<br>
       El flujo tiene 4 pasos. Los pasos 1 y 3 los ejecuta la IA.<br>
       El paso 2 lo ejecuta <strong>USTED</strong>: elige la estrategia.<br>
-      El paso 4 es el reporte de verificacion.</p>
+      El paso 4 es el reporte de verificaci&oacute;n.</p>
     </div>
 
     <!-- API Key & Model -->
     <div class="panel">
       <label for="api-key-input">API Key de Google AI Studio</label>
       <div class="api-key-section">
-        <input type="password" id="api-key-input" placeholder="Pegue su API Key aqui">
+        <input type="password" id="api-key-input" placeholder="Pegue su API Key aqu&iacute;">
         <button id="btn-save-key" class="btn-primary btn-small">Guardar</button>
-        <button id="btn-test-key" class="btn-secondary btn-small">Probar conexion</button>
+        <button id="btn-test-key" class="btn-secondary btn-small">Probar conexi&oacute;n</button>
         <span id="key-status" style="color:var(--green);font-size:0.85em"></span>
       </div>
       <p style="margin-top:6px;color:var(--fg-dim);font-size:0.85em">
@@ -35,8 +35,8 @@
       <div style="margin-top:12px">
         <label for="model-select">Modelo</label>
         <select id="model-select">
-          <option value="gemini-2.5-flash" selected>gemini-2.5-flash (rapido, gratis)</option>
-          <option value="gemini-2.5-pro">gemini-2.5-pro (mas potente, gratis con limites)</option>
+          <option value="gemini-2.5-flash" selected>gemini-2.5-flash (r&aacute;pido, gratis)</option>
+          <option value="gemini-2.5-pro">gemini-2.5-pro (m&aacute;s potente, gratis con l&iacute;mites)</option>
         </select>
       </div>
     </div>
@@ -46,7 +46,7 @@
       <strong>[ADVERTENCIA DE PRIVACIDAD]</strong><br>
       Los datos que usted ingrese son enviados a los servidores de Google (Gemini API).<br>
       Si va a usar una demanda REAL: anonimice TODOS los datos antes de enviarlos.<br>
-      Reemplace nombres por "Parte A / Parte B" y elimine cedulas, cuentas y datos de contacto.
+      Reemplace nombres por "Parte A / Parte B" y elimine c&eacute;dulas, cuentas y datos de contacto.
     </div>
 
     <!-- ================================================================= -->
@@ -54,7 +54,7 @@
     <!-- ================================================================= -->
     <div class="step-header" id="step1-header">
       <span class="step-number">1</span>
-      PASO 1: Analisis de demanda y generacion de spec
+      PASO 1: An&aacute;lisis de demanda y generaci&oacute;n de spec
     </div>
 
     <div class="panel">
@@ -63,7 +63,7 @@
         <input type="file" id="demand-file" accept=".txt,.html,.htm,.pdf,.docx">
         <button id="btn-use-example" class="btn-secondary btn-small">Usar ejemplo</button>
       </div>
-      <textarea id="demand-text" rows="12" placeholder="Pegue el texto de la demanda aqui..."></textarea>
+      <textarea id="demand-text" rows="12" placeholder="Pegue el texto de la demanda aqu&iacute;..."></textarea>
       <div class="btn-row">
         <button id="btn-analyze" class="btn-primary">Analizar demanda</button>
       </div>
@@ -77,22 +77,22 @@
     <!-- ================================================================= -->
     <div class="step-header hidden" id="step2-header">
       <span class="step-number">2</span>
-      PASO 2: Revision y decision estrategica (USTED)
+      PASO 2: Revisi&oacute;n y decisi&oacute;n estrat&eacute;gica (USTED)
     </div>
 
     <div id="step2-section" class="hidden">
       <div class="panel panel-yellow">
-        <p>Revise las opciones estrategicas generadas.<br>
-        El modelo <strong>NO</strong> eligio por usted. Esa decision es suya.</p>
+        <p>Revise las opciones estrat&eacute;gicas generadas.<br>
+        El modelo <strong>NO</strong> eligi&oacute; por usted. Esa decisi&oacute;n es suya.</p>
         <div style="margin-top:12px">
           <label for="strategy-select">Seleccione la estrategia principal</label>
           <select id="strategy-select">
-            <option value="">-- Seleccione una opcion --</option>
+            <option value="">-- Seleccione una opci&oacute;n --</option>
           </select>
         </div>
         <div style="margin-top:12px">
-          <label for="strategy-notes">Notas adicionales (opcional: justificacion, combinaciones, subsidiaria)</label>
-          <textarea id="strategy-notes" rows="3" placeholder="Ej: Usar opcion 1 como principal y opcion 2 como subsidiaria porque..."></textarea>
+          <label for="strategy-notes">Notas adicionales (opcional: justificaci&oacute;n, combinaciones, subsidiaria)</label>
+          <textarea id="strategy-notes" rows="3" placeholder="Ej: Usar opci&oacute;n 1 como principal y opci&oacute;n 2 como subsidiaria porque..."></textarea>
         </div>
         <div class="btn-row">
           <button id="btn-confirm-strategy" class="btn-success">Confirmar estrategia</button>
@@ -105,7 +105,7 @@
     <!-- ================================================================= -->
     <div class="step-header hidden" id="step3-header">
       <span class="step-number">3</span>
-      PASO 3: Redaccion de contestacion
+      PASO 3: Redacci&oacute;n de contestaci&oacute;n
     </div>
 
     <div id="step3-section" class="hidden">
@@ -129,7 +129,7 @@
     </div>
 
     <div style="margin-top:32px;text-align:center;color:var(--fg-dim);font-size:0.85em">
-      SDD Legal v0.1.0 | Autor: Juan Alejandro Herrera Lopez
+      SDD Legal v0.1.0 | Autor: Juan Alejandro Herrera L&oacute;pez
     </div>
   </div>
 
@@ -138,7 +138,7 @@
   <!-- Mammoth.js for reading DOCX files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
   <!-- docx.js for generating DOCX reports -->
-  <script src="https://unpkg.com/docx@9.5.0/build/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docx@9.5.0/dist/index.iife.js"></script>
 
   <script src="kit.js"></script>
   <script src="app.js"></script>
