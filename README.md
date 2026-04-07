@@ -70,7 +70,7 @@ Los datos se envían a Google (Gemini API). Si usa una demanda real:
 
 # El artículo: Spec-Driven Development jurídico
 
-*Por Juan Alejandro Herrera López -- Abogado TI -- Contraloría General de la República*
+*Por Juan Alejandro Herrera López -- Abogado especialista en ingeniería de software*
 
 ---
 
