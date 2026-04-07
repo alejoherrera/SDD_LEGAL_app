@@ -4,6 +4,8 @@
 
 Abra `index.html` en su navegador. No requiere instalar nada.
 
+**[Descargar ZIP](SDD_LEGAL_app.zip)** -- Descargue, descomprima y abra `index.html`.
+
 **Autor:** Juan Alejandro Herrera López - Abogado TI y programador
 
 ---
