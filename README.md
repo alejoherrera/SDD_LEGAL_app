@@ -140,7 +140,7 @@ El problema no es tener las tres líneas. Es que son parcialmente incompatibles:
 | CA-06 | Se argumentó ruptura del nexo causal por hecho de tercero o causa extraña si procede | Defensa |
 | CA-07 | Se incluyó defensa subsidiaria con fundamento en art. 1045 CC | Importante |
 
-## QA jurídico: el control de calidad que la abogacía nunca tuvo
+## QA jurídico: el control de calidad necesario con el uso de modelos de IA
 
 En ingeniería de software, Quality Assurance (QA) es el proceso sistemático de verificar que el producto cumple su especificación antes de salir al mundo. No es lo mismo que "revisión" -- es verificación estructurada contra criterios predefinidos, ejecutada por alguien distinto al autor.
 
@@ -252,7 +252,7 @@ El SDD jurídico no es solo útil para contestar demandas. El mismo principio ap
 
 ## Conclusión
 
-Los ingenieros de software tardaron décadas en aceptar que escribir código sin especificación es más caro, no más rápido. En derecho estamos en ese mismo punto de inflexión.
+Los ingenieros de software aprendieron que escribir código sin especificación es más caro, no más rápido. En derecho estamos en ese mismo punto de inflexión.
 
 El SDD jurídico no propone más burocracia. Propone que el tiempo invertido en definir el resultado esperado antes de redactar se recupera con creces en menos reescrituras, revisiones más rápidas, y escritos trazables y auditables.
 
