@@ -122,6 +122,8 @@ El problema no es tener las tres líneas. Es que son parcialmente incompatibles:
 
 ### Fase 1 -- Ficha de resultado esperado
 
+La primera fase obliga a definir, antes de cualquier redacción, cuál es el resultado que el escrito debe lograr. Para el caso de estafa digital, la ficha queda así:
+
 | Campo | Valor |
 |-------|-------|
 | Resultado mínimo | Rechazo total de la pretensión de CRC 14.200.000 o reducción por concausa del usuario |
@@ -129,6 +131,8 @@ El problema no es tener las tres líneas. Es que son parcialmente incompatibles:
 | Restricción crítica | El tipo de fraude determina toda la estrategia. Debe clarificarse antes de elegir defensas |
 
 ### Fase 2 -- Los 7 criterios de aceptación
+
+Con el resultado esperado definido, se establecen los criterios contra los cuales se verificará el escrito terminado. Cada criterio debe ser falseable: al revisar el documento, se puede marcar como cumplido o no cumplido sin ambigüedad.
 
 | Código | Criterio | Nivel |
 |--------|----------|-------|
@@ -171,7 +175,7 @@ Un LLM sin contexto estructurado produce respuestas plausibles. Un LLM con ingen
 |------------|----------------------------------|
 | System prompt | Rol del modelo, restricciones de comportamiento y formato de respuesta esperado |
 | Spec como contexto | La ficha de resultado esperado y los criterios se inyectan directamente. El LLM no supone el objetivo -- lo recibe explícitamente |
-| Few-shot jurídico | Pares input/output que muestran al modelo cómo razonar: un hecho procesal -> el argumento correcto con la estructura del despacho |
+| Few-shot jurídico | Pares input/output que muestran al modelo cómo razonar: un hecho procesal -> el argumento correcto con la estructura del despacho. *(Few-shot: técnica donde se le muestran al modelo ejemplos concretos de entrada y salida esperada para guiar su razonamiento.)* |
 | Restricciones de output | Qué NO debe hacer el modelo: no proponer defensas incompatibles entre sí, no citar normas fuera del mapa normativo sin señalarlo |
 
 ## La prueba real: qué pasa cuando no se usa el framework
@@ -244,7 +248,7 @@ Los puntos marcados con ** son compuertas humanas. El sistema no avanza sin apro
 | decision_estrategica | El abogado -- punto 1 | Agente Redactor, Agente QA |
 | satisfecho (por criterio) | Agente QA | El abogado -- punto 2 |
 | aprobado_para_presentacion | El abogado -- punto 2 | Orquestador (condición de salida) |
-| cierre | El abogado -- post-resolución | Base de conocimiento / RAG |
+| cierre | El abogado -- post-resolución | Base de conocimiento / RAG *(Retrieval-Augmented Generation: técnica que permite al modelo consultar documentos almacenados para fundamentar sus respuestas)* |
 
 ## Por qué esto importa más allá del litigio
 
